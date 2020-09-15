@@ -1,7 +1,10 @@
-﻿namespace CleanArch.Domin.Interfaces
+﻿using System;
+
+namespace CleanArch.Domin.Interfaces
 {
-    public interface ICourseRepository
+    public interface ICourseRepository : IDisposable
+
     {
-        
+
     }
 }

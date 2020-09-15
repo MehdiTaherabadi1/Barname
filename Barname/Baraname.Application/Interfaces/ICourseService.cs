@@ -1,6 +1,8 @@
-﻿namespace Baraname.Application.Interfaces
+﻿using System;
+
+namespace Baraname.Application.Interfaces
 {
-    public interface ICourseService
+    public interface ICourseService : IDisposable
     {
         
     }
