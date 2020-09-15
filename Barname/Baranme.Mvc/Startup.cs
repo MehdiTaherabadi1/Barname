@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Baranme.Mvc.Data;
+using CleanArch.Infra.Data.Context;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -39,6 +40,11 @@ namespace Baranme.Mvc
                     Configuration.GetConnectionString("BarnameDBConections")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDbContext<BaranameDBContext>(option =>
+            {
+                option.UseSqlServer(Configuration.GetConnectionString("BarnameDBConections"));
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
