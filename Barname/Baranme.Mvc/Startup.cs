@@ -76,5 +76,10 @@ namespace Baranme.Mvc
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+        public static void RegisterService(IServiceCollection service)
+        {
+
+        }
     }
 }
